@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
-const int MAX = 100;
+const int MAX = 100001;
 int tree[MAX];
 int A[MAX];
+//build segment tree in which the father node will be the sum of its children nodes.
 void build(int node, int start, int end)
 {
 	if (start == end)
@@ -21,17 +22,15 @@ void build(int node, int start, int end)
 		tree[node] = tree[2 * node] + tree[2 * node + 1];
 	}
 }
+//
 void update(int node, int start, int end, int idx, int val)
 {
 	if (start == end)
 	{
 		//leaf node
 		//add A[idx] and tree[node] by val
-		//A[idx] += val;
-		//tree[node] += val;
-		//update A[idx] and tree[node] as val
-		A[idx] = val;
-		tree[node] = val;
+		A[idx] += val;
+		tree[node] += val;
 	}
 	else
 	{
@@ -59,7 +58,7 @@ void update(int node, int start, int end, int idx, int val)
 3.And if the range represented by a node is partially inside and partially outside the given range,
   return sum of the left child and the right child
 */
-int query(int node, int start, int end, int l, int r)
+int querySum(int node, int start, int end, int l, int r)
 {
 	if (r < start || end < l)
 	{
@@ -73,36 +72,12 @@ int query(int node, int start, int end, int l, int r)
 	}
 	//range represented by a node is partially inside and partially outside the given range
 	int mid = (start + end) / 2;
-	int p1 = query(2 * node, start, mid, l, r);
-	int p2 = query(2 * node + 1, mid + 1, end, l, r);
+	int p1 = querySum(2 * node, start, mid, l, r);
+	int p2 = querySum(2 * node + 1, mid + 1, end, l, r);
 	return p1 + p2;
 }
 int main()
 {
-	int N, Q; //number of elements and number of queries
-	cin >> N >> Q;
-	// input array A
-	for (int i = 0; i < N; i++)
-	{	
-		cin >> A[i];	
-	}
-	char c;
-	for (int i = 0; i < Q; i++)
-	{
-		cin >> c;
-		if (c == 'q')
-		{
-			//find the minimum between an interval (left,right)
-			int l, r;
-			cin >> l >> r;
-
-		}
-		else if (c == 'u')
-		{
-			//update A[x] = y
-			int x, y;
-			cin >> x >> y;
-		}
-	}
+	
 	return 0;
 }
