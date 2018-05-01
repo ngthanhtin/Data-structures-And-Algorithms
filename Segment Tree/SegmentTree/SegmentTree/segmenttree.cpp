@@ -26,8 +26,12 @@ void update(int node, int start, int end, int idx, int val)
 	if (start == end)
 	{
 		//leaf node
-		A[idx] += val;
-		tree[node] += val;
+		//add A[idx] and tree[node] by val
+		//A[idx] += val;
+		//tree[node] += val;
+		//update A[idx] and tree[node] as val
+		A[idx] = val;
+		tree[node] = val;
 	}
 	else
 	{
@@ -75,5 +79,30 @@ int query(int node, int start, int end, int l, int r)
 }
 int main()
 {
+	int N, Q; //number of elements and number of queries
+	cin >> N >> Q;
+	// input array A
+	for (int i = 0; i < N; i++)
+	{	
+		cin >> A[i];	
+	}
+	char c;
+	for (int i = 0; i < Q; i++)
+	{
+		cin >> c;
+		if (c == 'q')
+		{
+			//find the minimum between an interval (left,right)
+			int l, r;
+			cin >> l >> r;
+
+		}
+		else if (c == 'u')
+		{
+			//update A[x] = y
+			int x, y;
+			cin >> x >> y;
+		}
+	}
 	return 0;
 }
