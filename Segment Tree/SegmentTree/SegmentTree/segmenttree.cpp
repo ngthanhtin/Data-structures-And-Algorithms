@@ -46,6 +46,33 @@ void update(int node, int start, int end, int idx, int val)
 		tree[node] = tree[2 * node] + tree[2 * node + 1];
 	}
 }
+//Query
+/*
+1.If the range represented by a node is completely outside the given range,
+  simply return 0
+2. the range represented by a node is completely within the given range,
+   return the value of the node which is the sum of all the elements in the range represented by the node
+3.And if the range represented by a node is partially inside and partially outside the given range,
+  return sum of the left child and the right child
+*/
+int query(int node, int start, int end, int l, int r)
+{
+	if (r < start || end < l)
+	{
+		//range represented by a node is completely outside the given range
+		return 0;
+	}
+	if (l <= start && end <= r)
+	{
+		//range represented by a node is completely inside the given range
+		return tree[node];
+	}
+	//range represented by a node is partially inside and partially outside the given range
+	int mid = (start + end) / 2;
+	int p1 = query(2 * node, start, mid, l, r);
+	int p2 = query(2 * node + 1, mid + 1, end, l, r);
+	return p1 + p2;
+}
 int main()
 {
 	return 0;
