@@ -24,7 +24,7 @@ else:
 def activity_forecast(days):
     #choose the starting state
     activityToday = "Sleep"
-    print("Start state: " + activityToday)
+    #print("Start state: " + activityToday)
     # Shall store the sequence of states taken.
     #So, this only has the starting state for now.
     activityList = [activityToday]
@@ -76,11 +76,23 @@ def activity_forecast(days):
                 activityList.append("Run")
         i = i + 1
     #end while
-    print("Possible states: " + str(activityList))
-    print("End state after "+ str(days) + " days: " + activityToday)
-    print("Probability of the possible sequence of states: " + str(prob))
+    return activityList
 
-# Function that forecasts the possible state for the next 2 days
-activity_forecast(2)
+# To save every activityList
+list_activity = []
+count = 0
+# `Range` starts from the first count up until but excluding the last count
+for iterations in range(1,10000):
+        list_activity.append(activity_forecast(2))
+# Check out all the `activityList` we collected    
+#print(list_activity)
+# Iterate through the list to get a count of all activities ending in state:'Run'
+for smaller_list in list_activity:
+    if(smaller_list[2] == "Run"):
+        count += 1
+# Calculate the probability of starting from state:'Sleep' and ending at state:'Run'
+percentage = (count/10000) * 100
+print("The probability of starting at state:'Sleep' and ending at state:'Run'= " \
+      + str(percentage) + "%")
                 
             
