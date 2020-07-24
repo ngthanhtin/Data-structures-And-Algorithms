@@ -47,11 +47,12 @@ void FloydWarshall(vector<vector<int> > &graph, vector<vector<int> > &dist)
 	for(k=0;k<n;k++)
 		for (i = 0; i < n; i++)
 		{
-			if (dist[i][j] > dist[i][k] + dist[k][j])
-			{
-				dist[i][j] = dist[i][k] + dist[k][j];
-				path[i][j] = path[k][j];
-			}
+			for(j=0;j<n;j++)
+				if (dist[i][j] > dist[i][k] + dist[k][j])
+				{
+					dist[i][j] = dist[i][k] + dist[k][j];
+					path[i][j] = path[k][j];
+				}
 		}
 }
 int main()
