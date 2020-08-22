@@ -1,2 +1,3 @@
 # Data-structures-And-Algorithms
-Data structures and Algorithms
+Implement Data structures and Algorithms in various programming languages
+
