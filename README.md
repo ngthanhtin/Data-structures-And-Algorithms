@@ -15,6 +15,8 @@ This repo is for practicing Data structures and Algorithms.
 | Prim | [implementation](https://github.com/ngthanhtin/Data-structures-And-Algorithms/tree/master/implementation/Prim)/[hackerrank]() |
 | Trie | [implementation](https://github.com/ngthanhtin/Data-structures-And-Algorithms/tree/master/implementation/Trie)/[hackerrank]() |
 | Disjoint Set | [implementation](https://github.com/ngthanhtin/Data-structures-And-Algorithms/tree/master/implementation/Disjoint%20Set)/[hackerrank]() |
+| Topological Sort | [implementation]()/[hackerrank]() |
+| Segment Tree | [implementation]()/[hackerrank]() |
 
 
 
