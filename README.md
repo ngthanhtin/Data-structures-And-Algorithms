@@ -7,6 +7,7 @@ This repo is for practicing Data structures and Algorithms.
 | LinkedList   | [hackerrank](https://github.com/ngthanhtin/Data-structures-And-Algorithms/tree/master/hackerrank/datastructure/linkedlist) |
 | Stack | [hackerrank](https://github.com/ngthanhtin/Data-structures-And-Algorithms/tree/master/hackerrank/datastructure/stack) |
 | Queue | [hackerrank](https://github.com/ngthanhtin/Data-structures-And-Algorithms/tree/master/hackerrank/datastructure/queue) |
+| Heap | [implementation](https://github.com/ngthanhtin/Data-structures-And-Algorithms/tree/master/implementation/Heap)/[hackerrank]() |
 | Tree   | [hackerrank](https://github.com/ngthanhtin/Data-structures-And-Algorithms/tree/master/hackerrank/datastructure/tree) |
 | DFS_BFS | [implementation](https://github.com/ngthanhtin/Data-structures-And-Algorithms/tree/master/implementation/DFS_BFS)/[hackerrank]() |
 | Dijkstra | [implementation](https://github.com/ngthanhtin/Data-structures-And-Algorithms/tree/master/implementation/Dijkstra)/[hackerrank]() |
