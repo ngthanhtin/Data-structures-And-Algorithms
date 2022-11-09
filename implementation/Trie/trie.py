@@ -36,6 +36,23 @@ def find(root_node, key):
 #     return temp.countLeaf > 0, length - 1
      return temp.countLeaf > 0
 
+# function to find if a prefix apears in the trie
+def startsWith(root_node, prefix, numLeafs):
+    """
+    # numLeafs: the variable used to count # of words in the trie
+    """
+        length = len(prefix)
+        temp = root_node
+        if numLeafs == 0: 
+            return False
+        
+        for level in range(length):
+            index = ord(prefix[level]) - ord('a')
+            if temp.child[index] == None:
+                return False
+            temp = temp.child[index]
+
+        return True
 # class Solution:
 #     def indexPairs(self, text: str, words: List[str]) -> List[List[int]]:
 #         # Construct Tries
