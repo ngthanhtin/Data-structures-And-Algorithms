@@ -19,6 +19,7 @@ This repo is for practicing Data structures and Algorithms.
 | Topological Sort | [implementation]()/[hackerrank]()/[hackerearth]() |
 | Segment Tree | [implementation]()/[hackerrank]()/[hackerearth]() |
 
-
+# Excellent References
+https://github.com/jwasham/coding-interview-university
 
 # Updating...
